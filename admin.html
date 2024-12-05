@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="utf-8">
+    <title>GYMSTER - Admin</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Rubik&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="lib/flaticon/font/flaticon.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #121212;
+            color: #fff;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #1e1e1e;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #f4a261;
+        }
+
+        .header {
+            font-family: 'Montserrat', sans-serif;
+            color: #f39c12;
+            text-shadow: 10px 10px 10px rgba(0, 0, 0, 0.8);
+            font-size: 2rem;
+        }
+
+        /* Tablo düzeni */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background-color: #292929;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #444;
+        }
+
+        th {
+            background-color: #f4a261;
+            color: #121212;
+        }
+
+        tr:nth-child(even) {
+            background-color: #1e1e1e;
+        }
+
+        tr:hover {
+            background-color: #444;
+        }
+
+        /* Arama kutusunun yerleşimi */
+        .table-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        #searchBox {
+            padding: 8px;
+            border: none;
+            border-radius: 5px;
+            width: 250px;
+            background-color: #333;
+            color: #fff;
+        }
+
+        #searchBox::placeholder {
+            color: #bbb;
+        }
+
+        /* Sil butonu düzeni */
+        .btn {
+            display: inline-block;
+            background-color: #f39c12;
+            color: #fff;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background-color: #e67e22;
+        }
+
+        .bg-hero {
+            position: relative;
+        }
+
+        .bg-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            /* Siyah yarı şeffaf katman */
+            z-index: 1;
+        }
+
+        .bg-hero h1 {
+            position: relative;
+            z-index: 2;
+            /* Yazıyı üstte tutar */
+        }
+
+        .gymster-title {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 10px 20px;
+            display: inline-block;
+            border-radius: 5px;
+        }
+
+        .text-shadow {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        }
+
+        .fas {
+            color: #f39c12;
+            margin-right: 10px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="gymster-title d-flex justify-content-center align-items-center">
+        <a href="index.html" class="text-decoration-none d-flex align-items-center">
+            <i class="fas fa-dumbbell text-warning me-2" style="font-size: 2.5rem;"></i>
+            <h1 class="m-0 display-5 text-light text-uppercase font-weight-bold text-shadow">Gymster</h1>
+        </a>
+    </div>
+
+
+    <!-- Hero Start -->
+    <div class="container-fluid bg-primary p-5 bg-hero mb-5"
+        style="background: url('img/admin.jpg') no-repeat center center; background-size: cover; height: 50vh;">
+        <div class="row h-100 align-items-center">
+            <div class="col-12 text-center">
+                <h1 class="display-4 text-uppercase text-white">Admin Paneli</h1>
+            </div>
+        </div>
+    </div>
+    <!-- Hero End -->
+
+
+
+
+    <div class="container">
+        <h1>Ön Kayıt İşlemleri</h1>
+        <!-- Tablonun üst kısmı -->
+        <div class="table-header">
+            <h2></h2>
+            <input type="text" id="searchBox" placeholder="Ara..." onkeyup="filterTable()">
+        </div>
+        <!-- Tablo -->
+        <table>
+            <thead>
+                <tr>
+                    <th>Ad</th>
+                    <th>Soyad</th>
+                    <th>Telefon</th>
+                    <th>E-mail</th>
+                    <th>Adres</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Ahmet</td>
+                    <td>Yılmaz</td>
+                    <td>0532 123 45 67</td>
+                    <td>ahmet@mail.com</td>
+                    <td>Karamürsel, Kocaeli</td>
+                </tr>
+                <tr>
+                    <td>Ayşe</td>
+                    <td>Demir</td>
+                    <td>0543 987 65 43</td>
+                    <td>ayse@mail.com</td>
+                    <td>Karamürsel, Kocaeli</td>
+                </tr>
+                <tr>
+                    <td>Mehmet</td>
+                    <td>Kaya</td>
+                    <td>0555 321 65 87</td>
+                    <td>mehmet@mail.com</td>
+                    <td>Karamürsel, Kocaeli</td>
+                </tr>
+                <tr>
+                    <td>Ebrar</td>
+                    <td>Akgün</td>
+                    <td>0531 123 45 67</td>
+                    <td>ebrar@mail.com</td>
+                    <td>Karamürsel, Kocaeli</td>
+                </tr>
+                <tr>
+                    <td>Hasan</td>
+                    <td>Mayetin</td>
+                    <td>0544 321 98 87</td>
+                    <td>hasan@mail.com</td>
+                    <td>Karamürsel, Kocaeli</td>
+                </tr>
+                <tr>
+                    <td>Kaan</td>
+                    <td>Bitik</td>
+                    <td>0515 357 46 82</td>
+                    <td>kaan@mail.com</td>
+                    <td>Karamürsel, Kocaeli</td>
+                </tr>
+                <tr>
+                    <td>Osman</td>
+                    <td>Karaman</td>
+                    <td>0542 654 32 21</td>
+                    <td>osman@mail.com</td>
+                    <td>Gölcük, Kocaeli</td>
+                </tr>
+                <tr>
+                    <td>İrem</td>
+                    <td>Güler</td>
+                    <td>0546 213 02 52</td>
+                    <td>irem@mail.com</td>
+                    <td>Gölcük, Kocaeli</td>
+                </tr>
+                <tr>
+                    <td>Gülay</td>
+                    <td>Güler</td>
+                    <td>0551 111 02 52</td>
+                    <td>gülay@mail.com</td>
+                    <td>Halıdere, Kocaeli</td>
+                </tr>
+                <tr>
+                    <td>Kerem</td>
+                    <td>Esin</td>
+                    <td>5444 213 11 12</td>
+                    <td>kerem@mail.com</td>
+                    <td>Halıdere, Kocaeli</td>
+                </tr>
+                <tr>
+                    <td>Orhan</td>
+                    <td>Ekin</td>
+                    <td>0546 999 02 88</td>
+                    <td>orhun@mail.com</td>
+                    <td>Başiskele, Kocaeli</td>
+                </tr>
+                <tr>
+                    <td>Çetin</td>
+                    <td>Metin</td>
+                    <td>0541 511 02 52</td>
+                    <td>çetin@mail.com</td>
+                    <td>İzmit, Kocaeli</td>
+                </tr>
+                <tr>
+                    <td>Yağmur</td>
+                    <td>Derici</td>
+                    <td>0578 862 02 92</td>
+                    <td>yağmur@mail.com</td>
+                    <td>Gölcük, Kocaeli</td>
+                </tr>
+                <tr>
+                    <td>Faruk</td>
+                    <td>Biter</td>
+                    <td>0589 33 02 32</td>
+                    <td>faruk@mail.com</td>
+                    <td>Değirmendere, Kocaeli</td>
+                </tr>
+                <tr>
+                    <td>Orhun</td>
+                    <td>Topkaya</td>
+                    <td>0546 456 88 52</td>
+                    <td>orhun@mail.com</td>
+                    <td>Karamürsel, Kocaeli</td>
+                </tr>
+                <tr>
+                    <td>Ekin</td>
+                    <td>Tacar</td>
+                    <td>0522 963 02 94</td>
+                    <td>ekin@mail.com</td>
+                    <td>Değirmendere, Kocaeli</td>
+                </tr>
+                <tr>
+                    <td>Zeynep</td>
+                    <td>Tekin</td>
+                    <td>0541 789 33 52</td>
+                    <td>zeynep@mail.com</td>
+                    <td>Halıdere, Kocaeli</td>
+                </tr>
+                <tr>
+                    <td>Tolga</td>
+                    <td>Bakışlı</td>
+                    <td>0546 222 22 10</td>
+                    <td>tolga@mail.com</td>
+                    <td>Gölcük, Kocaeli</td>
+                </tr>
+            </tbody>
+        </table>
+        <!-- Sil Butonu -->
+        <a href="#" class="btn">Üye Sil</a>
+    </div>
+
+    <script>
+        function filterTable() {
+            const searchBox = document.getElementById("searchBox");
+            const filter = searchBox.value.toUpperCase();
+            const rows = document.querySelectorAll("table tbody tr");
+            rows.forEach(row => {
+                const cells = row.getElementsByTagName("td");
+                let match = false;
+                for (let i = 0; i < cells.length; i++) {
+                    if (cells[i].innerText.toUpperCase().indexOf(filter) > -1) {
+                        match = true;
+                        break;
+                    }
+                }
+                row.style.display = match ? "" : "none";
+            });
+        }
+    </script>
+
+
+
+
+
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-dark py-3 fs-4 back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
