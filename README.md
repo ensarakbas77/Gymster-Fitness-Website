@@ -46,5 +46,8 @@ Form, isim, soyisim, yaş, cinsiyet, iletişim bilgileri ve hedeflenen antrenman
 	Sayfanın sonunda, üyeliğin avantajları ve yeni üyelere sunulan indirimlerden bahsedilmektedir. Örneğin, “Üye olun ve ilk ay %30 indirim kazanın!” gibi fırsatlar sunularak ziyaretçiler teşvik edilmektedir. 
  Bu bölüm, kullanıcı dostu tasarımı sayesinde üyelik işlemlerini hızlı ve kolay hale getirmektedir.* </br> </br>
 <img width="935" alt="ileti" src="https://github.com/user-attachments/assets/c537b4ae-1fdf-4cbd-9a33-897875bc4868">
-<img width="923" alt="üye" src="https://github.com/user-attachments/assets/c4685aa4-3c3d-4bb0-bb3d-aa9f162b2094">
-
+<img width="923" alt="üye" src="https://github.com/user-attachments/assets/c4685aa4-3c3d-4bb0-bb3d-aa9f162b2094"> </br> </br>
+### Admin Paneli </br>
+*Admin paneli, sistem yöneticilerinin web sitesini veya uygulamayı yönetebileceği bir arayüzdür. Kullanıcı verilerinin düzenlenmesi, silinmesi, güncellenmesi gibi işlemleri hızlı ve kolay bir şekilde yapmayı sağlar.
+Bu projede, modern ve kullanıcı dostu bir admin paneli tasarlanmıştır. Ayrıca, admin paneli tasarımında koyu temalar kullanılarak profesyonel ve şık bir görünüm hedeflenmiştir. İlerleyen aşamalarda grafik ve istatistikler, arama ve filtreleme gibi işlevler eklenerek panelin fonksiyonelliği artırılabilir.* </br>
+<img width="938" alt="admin paneli" src="https://github.com/user-attachments/assets/5e3676bb-a0d2-4877-8b39-d9d2b1d4dad7">
